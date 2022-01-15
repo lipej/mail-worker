@@ -37,13 +37,11 @@ public class Receiver {
     }
 
     private static void processError(ServiceBusErrorContext context, CountDownLatch countdownLatch) {
-        if (!(context.getException() instanceof ServiceBusException)) {
+        if (!(context.getException() instanceof ServiceBusException exception)) {
             System.out.printf("[Non-ServiceBusException]: %s%n", context.getException());
             return;
         }
 
-        ServiceBusException exception = (ServiceBusException) context.getException();
-       
         System.out.printf("[ServiceBusException]: source %s, reason %s, message: %s%n",  context.getErrorSource(), exception.getReason(), exception);
 
         countdownLatch.countDown();

@@ -14,7 +14,7 @@ public class HealthController {
     public ResponseEntity<HealthResponse> health() {
         HealthResponse response = new HealthResponse();
 
-        response.setMessage("Everything is fine!");
+        response.setMessage("I am ok.");
         response.setSuccess(true);
 
         return ResponseEntity.ok(response);

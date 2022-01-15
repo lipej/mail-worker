@@ -1,8 +1,9 @@
 package dev.lipejose.mailworker;
 
-import dev.lipejose.mailworker.workers.Receiver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import dev.lipejose.mailworker.workers.Receiver;
 
 @SpringBootApplication
 public class MailworkerApplication {
