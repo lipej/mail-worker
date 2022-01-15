@@ -15,8 +15,14 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.sendgrid:sendgrid-java:4.8.1'
+	implementation 'com.azure:azure-core:1.24.1'
+	implementation 'com.azure:azure-messaging-servicebus:7.5.1'
+	implementation 'com.google.code.gson:gson:2.8.9'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
 
 test {
 	useJUnitPlatform()
